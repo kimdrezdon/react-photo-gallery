@@ -81,6 +81,7 @@ input {
 
 .photo-container ul img {
   width: 100%;
+  object-fit: cover;
   transform: scale(1.25);
   transition: transform 1.25s;
 }

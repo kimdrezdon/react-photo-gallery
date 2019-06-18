@@ -17,8 +17,8 @@ class App extends Component {
     this.performSearch();
   }
 
-  performSearch(query = 'beaches') {
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&safe_search=1&per_page=24&format=json&nojsoncallback=1`)
+  performSearch(query = 'amalfi%20coast') {
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&sort=interestingness-desc&safe_search=1&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
       this.setState({
         images: response.data.photos.photo
@@ -35,10 +35,10 @@ class App extends Component {
         <div className="container">
           <Header />
           <Switch>
-            <Route exact path="/" render={ () => <Redirect to="/beaches" /> } />
-            <Route path="/cats" component={() => <ImageGallery images={this.state.images} />} />
-            <Route path="/dogs" component={() => <ImageGallery images={this.state.images} />} />
-            <Route path="/beaches" render={() => <ImageGallery images={this.state.images} />} />
+            <Route exact path="/" render={ () => <Redirect to="/amalficoast" /> } />
+            <Route path="/amalficoast" render={() => <ImageGallery images={this.state.images} />} />
+            <Route path="/tulum" render={() => <ImageGallery images={this.state.images} />} />
+            <Route path="/santorini" render={() => <ImageGallery images={this.state.images} />} />
             <Route component={NoResults} />
           </Switch>
         </div>
