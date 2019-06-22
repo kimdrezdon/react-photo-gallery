@@ -13,7 +13,7 @@ class SearchForm extends Component {
         e.preventDefault();
         let searchText = this.query.value.toLowerCase();
         this.props.onSearch(searchText);
-        let path = `search/${searchText}`;
+        let path = `/search/${searchText}`;
         this.props.history.push(path);
         e.currentTarget.reset();
     }
