@@ -24,16 +24,16 @@ class App extends Component {
   }
 
   performSearch = (query) => {
+    this.setState({ loading: true });
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&sort=interestingness-desc&safe_search=1&content_type=1&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
-      this.setState({ loading: true });
       let responseData = response.data.photos.photo;
       if (query === 'amalfi%20coast') {
-        this.setState({ amalfiImages: responseData })
+        this.setState({ amalfiImages: responseData, loading: false })
       } else if (query === 'hallstat') {
-        this.setState({ hallstatImages: responseData })
+        this.setState({ hallstatImages: responseData, loading: false })
       } else if (query === 'santorini') {
-        this.setState({ santoriniImages: responseData })
+        this.setState({ santoriniImages: responseData, loading: false })
       } else {
         this.setState({ searchImages: responseData, loading: false });
       }
@@ -50,7 +50,7 @@ class App extends Component {
           <Route path="/" render={ (props) => <Header {...props} onSearch={this.performSearch} /> } />
           <Switch>
             <Route exact path="/" render={ () => <Redirect to="/amalficoast" /> } />
-            <Route path="/amalficoast" render={() => <ImageGallery images={this.state.amalfiImages} title={'Amalfi Coast Photos'} />} />
+            <Route path="/amalficoast" render={() => <ImageGallery loading={this.state.loading} images={this.state.amalfiImages} title={'Amalfi Coast Photos'} />} />
             <Route path="/hallstat" render={() => <ImageGallery images={this.state.hallstatImages} title={'hallstat Photos'} />} />
             <Route path="/santorini" render={() => <ImageGallery images={this.state.santoriniImages} title={'Santorini Photos'} />} />
             <Route path='/search/:topic' render={({match}) => <ImageGallery loading={this.state.loading} images={this.state.searchImages} title={`${match.params.topic} Photos`} /> } />
