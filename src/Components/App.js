@@ -12,14 +12,14 @@ class App extends Component {
   state = { 
     searchImages: [],
     amalfiImages: [],
-    tulumImages: [],
+    hallstatImages: [],
     santoriniImages: [],
     loading: true
   }
 
   componentDidMount() {
     this.performSearch('amalfi%20coast');
-    this.performSearch('tulum');
+    this.performSearch('hallstat');
     this.performSearch('santorini');
   }
 
@@ -30,8 +30,8 @@ class App extends Component {
       let responseData = response.data.photos.photo;
       if (query === 'amalfi%20coast') {
         this.setState({ amalfiImages: responseData })
-      } else if (query === 'tulum') {
-        this.setState({ tulumImages: responseData })
+      } else if (query === 'hallstat') {
+        this.setState({ hallstatImages: responseData })
       } else if (query === 'santorini') {
         this.setState({ santoriniImages: responseData })
       } else {
@@ -51,7 +51,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={ () => <Redirect to="/amalficoast" /> } />
             <Route path="/amalficoast" render={() => <ImageGallery images={this.state.amalfiImages} title={'Amalfi Coast Photos'} />} />
-            <Route path="/tulum" render={() => <ImageGallery images={this.state.tulumImages} title={'Tulum Photos'} />} />
+            <Route path="/hallstat" render={() => <ImageGallery images={this.state.hallstatImages} title={'hallstat Photos'} />} />
             <Route path="/santorini" render={() => <ImageGallery images={this.state.santoriniImages} title={'Santorini Photos'} />} />
             <Route path='/search/:topic' render={({match}) => <ImageGallery loading={this.state.loading} images={this.state.searchImages} title={`${match.params.topic} Photos`} /> } />
             <Route component={Error} />

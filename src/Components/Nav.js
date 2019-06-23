@@ -6,7 +6,7 @@ const Nav = () => {
         <nav className="main-nav">
             <ul>
                 <li><NavLink to="/amalficoast">Amalfi Coast</NavLink></li>
-                <li><NavLink to="/tulum">Tulum</NavLink></li>
+                <li><NavLink to="/hallstat">Hallstat</NavLink></li>
                 <li><NavLink to="/santorini">Santorini</NavLink></li>
             </ul>
         </nav>
