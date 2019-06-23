@@ -26,7 +26,7 @@ class SearchForm extends Component {
                     onChange={this.onSearchChange}
                     name="search" 
                     ref={(input) => this.query = input}
-                    placeholder="Search" 
+                    placeholder="Search for a destination" 
                     required />
                 <button type="submit" className="search-button">
                     <svg
