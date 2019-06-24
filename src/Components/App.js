@@ -29,14 +29,15 @@ class App extends Component {
     .then(response => {
       let responseData = response.data.photos.photo;
       if (query === 'amalfi%20coast') {
-        this.setState({ amalfiImages: responseData, loading: false })
+        this.setState({ amalfiImages: responseData })
       } else if (query === 'hallstat') {
-        this.setState({ hallstatImages: responseData, loading: false })
+        this.setState({ hallstatImages: responseData })
       } else if (query === 'santorini') {
-        this.setState({ santoriniImages: responseData, loading: false })
+        this.setState({ santoriniImages: responseData })
       } else {
-        this.setState({ searchImages: responseData, loading: false });
+        this.setState({ searchImages: responseData });
       }
+      this.setState({ loading: false });
     })
     .catch(error => {
       console.log('Error fetching data', error);
