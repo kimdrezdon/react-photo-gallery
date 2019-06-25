@@ -50,7 +50,7 @@ class App extends Component {
         <div className="container">
           <Route path="/" render={ (props) => <Header {...props} onSearch={this.performSearch} /> } />
           <Switch>
-            <Route exact path="/" render={ () => <Redirect to="/amalficoast" /> } />
+            <Route exact path="/" render={ () => <Redirect to="/hallstat" /> } />
             <Route path="/amalficoast" render={() => <ImageGallery loading={this.state.loading} images={this.state.amalfiImages} title={'Amalfi Coast Photos'} />} />
             <Route path="/hallstat" render={() => <ImageGallery images={this.state.hallstatImages} title={'hallstat Photos'} />} />
             <Route path="/santorini" render={() => <ImageGallery images={this.state.santoriniImages} title={'Santorini Photos'} />} />
