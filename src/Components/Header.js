@@ -5,7 +5,8 @@ import SearchForm from './SearchForm';
 const Header = (props) => {
     return (
         <div className="nav-container">
-            <h1>Travel Inspiration Photo Gallery</h1>
+            <h1>Wanderlust</h1>
+            <h3>A Photo Gallery to Inspire Your Travels</h3>
             <SearchForm history={props.history} onSearch={props.onSearch}/>
             <Nav />
         </div>
