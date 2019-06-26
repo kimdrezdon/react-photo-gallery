@@ -14,7 +14,7 @@ An error message is displayed on the page as well as in the console when a user 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Config File
+## Config File
 
 ### Format
 
