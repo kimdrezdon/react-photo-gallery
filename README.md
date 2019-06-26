@@ -1,4 +1,4 @@
-# techdegree-project-7: React Gallery App
+# React Gallery App
 
 This project uses JavaScript, JSX, Axios, React and React Router to generate a photo gallery using data fetched from the Flickr API. 
 
