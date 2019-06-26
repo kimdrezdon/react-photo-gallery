@@ -1,11 +1,29 @@
+# techdegree-project-7: React Gallery App
+
+This project uses JavaScript, JSX, Axios, React and React Router to generate a photo gallery using data 
+fetched from the Flickr API. 
+
+The user can use the search component to find images of their choosing.
+
+Three default topics are also available when the page loads.
+
+If no matches are found by the search, a message displays informing the user that there were no results found.
+
+A loading indicator displays while the app fetches new data for the search. 
+
+An error message is displayed on the page as well as in the console when a user navigates to a path that does not exist.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##Config File
-Format: 
+
+### Format
+
 const apiKey = 'YOUR API KEY';
 export default apiKey;
 
-Location: 
+### Location
+
 In the src folder
 
 ## Available Scripts
