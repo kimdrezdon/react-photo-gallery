@@ -18,12 +18,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Format
 
+```
 const apiKey = 'YOUR API KEY';
+
 export default apiKey;
+```
 
 ### Location
 
-In the src folder
+`config.js` in the `src` folder
 
 ## Available Scripts
 
