@@ -9,6 +9,9 @@ import ImageGallery from './ImageGallery';
 import Error from './Error';
 
 class App extends Component {
+  /**
+   * Sets state of three default image topics and search to empty arrays. Sets state of loading to true since the data has not loaded yet.
+   */
   state = { 
     searchImages: [],
     amalfiImages: [],
@@ -17,12 +20,21 @@ class App extends Component {
     loading: true
   }
 
+  /**
+   * Runs the performSearch method for each of the three default image topics after the App component has mounted.
+   */
   componentDidMount() {
     this.performSearch('amalfi%20coast');
     this.performSearch('hallstat');
     this.performSearch('santorini');
   }
 
+  /**
+   * Sets the loading state back to true. 
+   * Fetches the photo data from the Flickr API using Axios. 
+   * Sets the state of the image array to the response photo data depending on the search query passed to it. 
+   * Sets the loading state to false.
+   */
   performSearch = (query) => {
     this.setState({ loading: true });
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&sort=interestingness-desc&safe_search=1&content_type=1&per_page=24&format=json&nojsoncallback=1`)
@@ -44,6 +56,12 @@ class App extends Component {
     });
   }
 
+  /**
+   * Renders the Header component on all paths, passing ...props in order to access the history object. 
+   * The path determines which images to load in the ImageGallery component being rendered.
+   * Switch routes to the Error component if none of the previous paths match.
+   * The home path automatically redirects to a path of one of the three default topics. 
+   */
   render() { 
     return ( 
       <BrowserRouter>

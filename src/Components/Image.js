@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Image = (props) => {
+    /**
+     * Returns an image
+     */
     return (  
         <li>
             <img

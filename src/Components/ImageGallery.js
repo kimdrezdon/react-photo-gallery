@@ -4,6 +4,12 @@ import NoResults from './NoResults';
 import Loading from './Loading';
 
 const ImageGallery = (props) => {
+    /**
+     * Sets results to the images array from the App state.
+     * If the loading state is true, the Loading component is returned.
+     * If the loading state is false, and the search was able to find images, the images are returned.
+     * If the loading state is false but the search found no matching images, the NoResults component is returned.
+     */
     const results = props.images;
     let images;
     if (props.loading) {

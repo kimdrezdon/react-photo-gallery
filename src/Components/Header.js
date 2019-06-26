@@ -3,6 +3,9 @@ import Nav from './Nav';
 import SearchForm from './SearchForm';
 
 const Header = (props) => {
+    /**
+     * Returns the app title, SearchForm component and Nav component.
+     */
     return (
         <div className="nav-container">
             <h1>Wanderlust</h1>

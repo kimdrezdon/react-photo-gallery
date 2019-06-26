@@ -2,6 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
+    /**
+     * Returns the navigation buttons for the three default topics.
+     */
     return (
         <nav className="main-nav">
             <ul>

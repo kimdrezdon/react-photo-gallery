@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Error = () => {
+    /**
+     * Returns an error message when the path doesn't exist.
+     */
     return (  
         <div className="error">
             <h3>404: Page Not Found!</h3>

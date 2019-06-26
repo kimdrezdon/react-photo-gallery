@@ -1,14 +1,26 @@
 import React, {Component} from 'react';
 
 class SearchForm extends Component {
+    /**
+     * Establishes state of the search input.
+     */
     state = {
         searchText: ''
     }
 
+    /**
+     * Continuously updates the state of the search input to the value entered by the user.
+     */
     onSearchChange = e => {
         this.setState({ searchText: e.target.value });
     }
 
+    /**
+     * Prevents default refresh when the search form is submitted. 
+     * Passes the user's search input to the App component's performSearch method.
+     * Redirects to the search topic's path by pushing the path to the history object.
+     * Resets the value of the search form.
+     */
     handleSubmit = e => {
         e.preventDefault();
         let searchText = this.query.value.toLowerCase();
