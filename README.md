@@ -10,7 +10,9 @@ If no matches are found by the search, a message displays informing the user tha
 
 A loading indicator displays while the app fetches new data for the search. 
 
-An error message is displayed on the page as well as in the console when a user navigates to a path that does not exist.
+An error message is displayed when a user navigates to a path that does not exist.
+
+This project is also hosted on Heroku.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
