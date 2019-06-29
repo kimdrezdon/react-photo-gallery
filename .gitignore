@@ -77,3 +77,6 @@ typings/
 
 # config file
 src/config.js
+
+# dotenv
+.env
