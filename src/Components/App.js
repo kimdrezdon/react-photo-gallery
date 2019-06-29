@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
-import apiKey from '../config.js'
 import axios from 'axios';
 
 //App components
@@ -37,7 +36,7 @@ class App extends Component {
    */
   performSearch = (query) => {
     this.setState({ loading: true });
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&sort=interestingness-desc&safe_search=1&content_type=1&per_page=24&format=json&nojsoncallback=1`)
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_FLICKR_API_KEY}&text=${query}&sort=interestingness-desc&safe_search=1&content_type=1&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
       let responseData = response.data.photos.photo;
       if (query === 'amalfi%20coast') {

@@ -14,20 +14,6 @@ An error message is displayed on the page as well as in the console when a user 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Config File
-
-### Format
-
-```
-const apiKey = 'YOUR API KEY';
-
-export default apiKey;
-```
-
-### Location
-
-`config.js` in the `src` folder
-
 ## Available Scripts
 
 In the project directory, you can run:
